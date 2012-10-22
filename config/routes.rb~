@@ -1,6 +1,6 @@
 AnimalAttack::Application.routes.draw do
 
-	resources :animals
+  get "animals/new"
 
 	root to: 'static_pages#index'
 	match '/help' => 'static_pages#help'

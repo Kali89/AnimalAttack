@@ -1,0 +1,13 @@
+<!--<% provide(:title, 'Animals') %>
+<h1>Animals</h1>
+<ul class="animals">
+	<% if @animal %>
+		<% @animal.each do |animal| %>
+		  <li>
+				<%= image_tag animal.attachment.url(:thumb) %>
+		    <%= link_to animal.name, animal %>
+		  </li>
+		<% end %>
+	<% end %>
+</ul> -->
+

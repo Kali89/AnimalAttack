@@ -1,0 +1,4 @@
+class AddImageToAnimal < ActiveRecord::Migration
+  def change
+  end
+end
