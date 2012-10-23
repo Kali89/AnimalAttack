@@ -1,4 +1,12 @@
 <div class="center hero-unit">
 	<h1>Animal Attack</h1>
 	<p> Who will win when nature collides? </p>
+	<div class="animalcontainerright">
+	<h2> <%= @animal.name %> </h2>
+	<%= image_tag @animal.attachment.url(:large) %>
+	</div>
+	<div class="animalcontainerleft">
+	<h2> <%= @animal2.name %> </h2>
+	<%= image_tag @animal2.attachment.url(:large) %>
+	</div>
 </div>

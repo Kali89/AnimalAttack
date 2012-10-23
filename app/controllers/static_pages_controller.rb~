@@ -1,5 +1,11 @@
 class StaticPagesController < ApplicationController
   def index
+		@allAnimals = Animal.all
+		@random_no = rand(@allAnimals.length)
+		@animal = @allAnimals[@random_no]
+		@newAnimals = @allAnimals.delete_at(@random_no)
+		@newRandom = rand(@newAnimals.length)
+		@animal2 = @newAnimals[@newRandom]
   end
 
   def help
@@ -10,4 +16,7 @@ class StaticPagesController < ApplicationController
 
   def contact
   end
+
+	def league
+	end
 end

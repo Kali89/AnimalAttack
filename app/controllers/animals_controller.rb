@@ -6,7 +6,6 @@ class AnimalsController < ApplicationController
 	def create
 		@animal = Animal.new(params[:animal])
 		if @animal.save
-			flash[:success] = "Animal successfully created"
 			redirect_to @animal
 		else
 			render 'new'

@@ -1,2 +1,12 @@
-<h1>StaticPages#home</h1>
-<p>Find me in app/views/static_pages/home.html.erb</p>
+<div class="center hero-unit">
+	<h1>Animal Attack</h1>
+	<p> Who will win when nature collides? </p>
+	<div class="animalcontainer">
+	<h2> <%= @animal.name %> </h2>
+	<%= image_tag @animal.attachment.url(:large) %>
+	</div>
+	<div class="animalcontainer">
+	<h2> <%= @animal2.name %> </h2>
+	<%= image_tag @animal2.attachment.url(:large) %>
+	</div>
+</div>

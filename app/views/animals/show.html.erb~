@@ -1,6 +1,10 @@
 <% provide(:title, @animal.name) %>
 <h1><%= @animal.name %></h1>
 <h3> Picture </h3>
+<div class="showanimalpicture">
 <%= image_tag @animal.attachment.url(:large) %>
+</div>
+<div class="textbox">
 <h3> Profile </h3>
 <%= @animal.blurb %>
+</div>

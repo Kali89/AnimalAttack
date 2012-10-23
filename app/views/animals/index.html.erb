@@ -3,9 +3,13 @@
 <ul class="animals">
 	<% if @animal %>
 		<% @animal.each do |animal| %>
-		  <li>
+		  <li class="animalbutton">
+				<div class="animalpicture">
 				<%= image_tag animal.attachment.url(:thumb) %>
+				</div>
+				<div class="animallink">
 		    <%= link_to animal.name, animal %>
+				</div>
 		  </li>
 		<% end %>
 	<% end %>

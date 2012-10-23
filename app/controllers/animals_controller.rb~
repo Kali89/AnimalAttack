@@ -19,6 +19,5 @@ class AnimalsController < ApplicationController
 
 	def index
 		@animal = Animal.all
-		@animal.attachment_from_url('public/Unhappy_face.jpg')
 	end
 end
