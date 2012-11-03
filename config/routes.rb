@@ -7,7 +7,8 @@ AnimalAttack::Application.routes.draw do
 	match '/about' => 'static_pages#about'
 	match '/contact' => 'static_pages#contact'
 	match '/league' => 'static_pages#league'
-	match '/animals' => 'animals#new'
+	match '/voting/:id' => 'static_pages#voting', :as => :voting
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -35,7 +36,7 @@ AnimalAttack::Application.routes.draw do
   #   end
 
   # Sample resource route with sub-resources:
-  #   resources :products do
+  #   resources :products dosite
   #     resources :comments, :sales
   #     resource :seller
   #   end

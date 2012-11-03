@@ -1,0 +1,2 @@
+$("#animals").append("<p>"+"<%= escape_javascript(@animal.name) %>"+" has been deleted.</p>");
+$("#animal-"+"<%= escape_javascript(@animal.name) %>").remove();

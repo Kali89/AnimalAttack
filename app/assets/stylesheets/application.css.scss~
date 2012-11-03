@@ -235,6 +235,5 @@ p {
 }
 
 .animalcontainerright img {
-	width: 95%;
-	height: 95%;
+
 }

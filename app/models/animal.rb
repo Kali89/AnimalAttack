@@ -22,7 +22,10 @@ class Animal < ActiveRecord::Base
 			:thumb => "100x100#",
 			:small => "150x150>",
 			:medium => "300x300>",
-			:large =>  "600x600>" }
+			:large =>  "600x600>" },
+		:storage => :s3,
+		:s3_credentials => "/home/matt/Desktop/RailsApp/AnimalAttack/config/s3.yml",
+		:bucket => 'animalattack'
 	before_save { |animal| animal.name = name.downcase }
 	validates :name, presence: true, uniqueness: { case_sensitive: false }
 	validates :rating, presence: true

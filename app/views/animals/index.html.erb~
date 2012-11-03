@@ -1,18 +1,21 @@
 <% provide(:title, 'Animals') %>
 <h1>Animals</h1>
-<ul class="animals">
+<ul id="animals">
 	<% if @animal %>
 		<% @animal.each do |animal| %>
+			<div id="animal-<%= @animal.name %>">
 		  <li class="animalbutton">
 				<div class="animalpicture">
 				<%= image_tag animal.attachment.url(:thumb) %>
 				</div>
 				<div class="animallink">
-				<h2><%= @animal.name %></h2>
 		    <%= link_to animal.name, animal %>
+				<%= link_to "Delete", animal_path(animal), :remote => true, :method => :delete, :confirm => 'Are you sure?' %>
 				</div>
 		  </li>
+			</div>
 		<% end %>
 	<% end %>
 </ul>
+<div id="ohyeah"></div>
 
