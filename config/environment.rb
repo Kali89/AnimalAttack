@@ -4,5 +4,3 @@ require "aws/s3"
 # Initialize the rails application
 AnimalAttack::Application.initialize!
 
-AWS::S3::DEFAULT_HOST.replace "s3-eu-west-1.amazonaws.com"
-
