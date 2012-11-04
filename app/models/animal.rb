@@ -22,7 +22,8 @@ class Animal < ActiveRecord::Base
 			:thumb => "100x100#",
 			:small => "150x150>",
 			:medium => "300x300>",
-			:large =>  "600x600>" }
+			:large =>  "600x600>" },
+		:bucket => 'animalattack'
 	before_save { |animal| animal.name = name.downcase }
 	validates :name, presence: true, uniqueness: { case_sensitive: false }
 	validates :rating, presence: true
