@@ -17,7 +17,7 @@ class Animal < ActiveRecord::Base
 	attr_protected :id
   #attr_accessible :blurb, :name, :rating
 	has_attached_file :attachment,
-		:default_url => ActionController::Base.helpers.asset_path('default_:style.png'),
+		#:default_url => ActionController::Base.helpers.asset_path('default_:style.png'),
 		:styles => {
 			:thumb => "100x100#",
 			:small => "150x150>",

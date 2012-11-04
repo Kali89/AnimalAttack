@@ -24,7 +24,7 @@ class Animal < ActiveRecord::Base
 			:medium => "300x300>",
 			:large =>  "600x600>" },
 		:storage => :s3,
-		:s3_credentials => "/home/matt/Desktop/RailsApp/AnimalAttack/config/s3.yml",
+		:s3_credentials => "/config/s3.yml",
 		:bucket => 'animalattack'
 	before_save { |animal| animal.name = name.downcase }
 	validates :name, presence: true, uniqueness: { case_sensitive: false }
