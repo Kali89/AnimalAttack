@@ -4,19 +4,15 @@
 	<% if @animal %>
 	<div class="animalcontainerright">
 	<h2> <%= @animal.name %> </h2> 
-	<%= link_to image_tag(@animal.attachment.url(:large)), voting_path(@animal.id), :remote => true, :confirm => "Rating:  "+@animal.rating.to_s  %>
+	<%= link_to image_tag(@animal.attachment.url(:large)), voting_path(@animal.id), :confirm => "Rating:  "+@animal.rating.to_s  %>
 	</div>
 	<div class="animalcontainerleft">
 	<h2> <%= @animal2.name %> </h2>
-	<%= link_to image_tag(@animal2.attachment.url(:large)), voting_path(@animal2.id), :remote => true, :confirm => "Rating:  "+@animal2.rating.to_s  %>
+	<%= link_to image_tag(@animal2.attachment.url(:large)), voting_path(@animal2.id), :confirm => "Rating:  "+@animal2.rating.to_s  %>
 	</div>
 	<div id="animalfacts"></div>
 	<% else %>
 	<p> Not working </p>
-	<% end %>
-	<%= form_for(@animal, :remote => true) do |f| %>
-	<%= f.hidden_field "animal.rating", :value => @animal.rating %>
-	<%= image_submit_tag(@animal.attachment.url(:large)) %>
 	<% end %>
 </div>
 

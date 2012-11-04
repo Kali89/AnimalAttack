@@ -14,10 +14,6 @@
 	<% else %>
 	<p> Not working </p>
 	<% end %>
-	<%= form_for(@animal, :remote => true) do |f| %>
-	<%= f.hidden_field "animal.rating", :value => animal.rating %>
-	<%= image_submit_tag(@animal.attachment.url(:large)) %>
-	<% end %>
 </div>
 
 
