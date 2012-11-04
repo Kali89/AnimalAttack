@@ -24,7 +24,8 @@ class Animal < ActiveRecord::Base
 			:medium => "300x300>",
 			:large =>  "600x600>" },
 		:path => ":attachment/:id/:style.:extension",
-		:bucket => 'animalattack'
+		:bucket => 'animalattack',
+		:url => "s3_eu_url"
 	before_save { |animal| animal.name = name.downcase }
 	validates :name, presence: true, uniqueness: { case_sensitive: false }
 	validates :rating, presence: true
