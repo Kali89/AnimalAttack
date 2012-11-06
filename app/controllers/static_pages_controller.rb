@@ -24,6 +24,15 @@ class StaticPagesController < ApplicationController
   end
 
 	def edit
+		@animal = Animal.find(params[:id])
+		@animal1 = Animal.find(@animal[0].id)
+		@animal2 = Animal.find(@animal[1].id)
+		@animal1.rating += 1
+		@animal2.rating -= 1
+		Animal.transaction do
+			@animal1.save!
+			@animal2.save!
+		end
 	end
 
 	def league
