@@ -178,6 +178,7 @@ p {
 #animals {
 	list-style: none;
 	margin: 0;
+	float: left;
 }
 
 #NewButton {
