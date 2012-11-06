@@ -15,6 +15,10 @@ class StaticPagesController < ApplicationController
 	end
 
   def help
+		respond_to do |format|
+			format.html
+			format.js
+		end
   end
 
   def about
