@@ -1,6 +1,6 @@
 <% provide(:title, 'Animals') %>
 <h1>Animals</h1>
-<h3 id="NewButton"> New </h3>
+<h3 id="NewButton"> <%= link_to "New", new_path %>  </h3>
 <ul id="animals">
 	<% if @animal %>
 		<% @animal.each do |animal| %>
