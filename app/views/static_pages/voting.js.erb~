@@ -1,4 +1,3 @@
 $("#animalfacts").html("<p>"+"<%= escape_javascript(@animal.name) %>" + ": " + "<%= escape_javascript(@animal.rating.to_s) %>" + "</p><br /><p>" + "<%= escape_javascript(@animal2.name) %>" + ": " + "<%= escape_javascript(@animal2.rating.to_s) %>" + "</p>");
-alert("<%= escape_javascript(@animal.name) %>" + ": " + "<%= escape_javascript(@animal.rating.to_s) %>");
 window.location.replace("/");
 
