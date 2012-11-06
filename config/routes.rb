@@ -7,6 +7,7 @@ AnimalAttack::Application.routes.draw do
 	match '/about' => 'static_pages#about'
 	match '/contact' => 'static_pages#contact'
 	match '/league' => 'static_pages#league'
+	match '/edit' => 'static_pages#edit'
 	match '/voting/:id' => 'static_pages#voting', :as => :voting
 
   # The priority is based upon order of creation:

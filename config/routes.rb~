@@ -1,7 +1,6 @@
 AnimalAttack::Application.routes.draw do
 
 	resources :animals
-	resources :voting
 
 	root to: 'static_pages#index'
 	match '/help' => 'static_pages#help'

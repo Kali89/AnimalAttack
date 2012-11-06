@@ -23,6 +23,9 @@ class StaticPagesController < ApplicationController
   def contact
   end
 
+	def edit
+	end
+
 	def league
 	end
 

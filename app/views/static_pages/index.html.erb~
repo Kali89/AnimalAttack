@@ -2,13 +2,21 @@
 	<h1>Animal Attack</h1>
 	<p> Who will win when nature collides? </p>
 	<% if @animal %>
+	<%= form_for @animal, :url => {:action => "edit" }, :remote => true do |f| %>
+	<%= f.hidden_field @animal.id, :value => @animal.rating %>
+	<%= f.hidden_field @animal2.id, :value => @animal2.rating %>
+	<% end %>
+	<%= form_for @animal2, :url => {:action  => "edit"}, :remote => true do |f| %>
+	<%= f.hidden_field @animal2.id, :value => @animal2.rating %>
+	<%= f.hidden_field @animal.id, :value => @animal.rating %>
+	<% end %>
 	<div class="animalcontainerright">
 	<h2> <%= @animal.name %> </h2> 
-	<%= link_to image_tag(@animal.attachment.url(:large)), voting_path(@animal.id), :remote => true, :confirm => "Rating:  "+@animal.rating.to_s  %>
+	<%= link_to image_tag(@animal.attachment.url(:large)), voting_path(@animal.id), :remote => true, :confirm => "Rating:  "+@animal.rating.to_s, :id => "FirstAnimal"  %>
 	</div>
 	<div class="animalcontainerleft">
 	<h2> <%= @animal2.name %> </h2>
-	<%= link_to image_tag(@animal2.attachment.url(:large)), voting_path(@animal2.id), :remote => true, :confirm => "Rating:  "+@animal2.rating.to_s  %>
+	<%= link_to image_tag(@animal2.attachment.url(:large)), voting_path(@animal2.id), :remote => true, :confirm => "Rating:  "+@animal2.rating.to_s, :id => "SecondAnimal"  %>
 	</div>
 	<div id="animalfacts"></div>
 	<% else %>

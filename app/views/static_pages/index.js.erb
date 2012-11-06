@@ -1,9 +1,11 @@
 $("#FirstAnimal").click(
 	function() {
 		$("#edit_animal_"+"<%= escape_javascript(@animal.id.to_s) %>").submit();
-		});
+		alert("I will kill you!");
+});
 
 $("#FirstAnimal").click(
 	function() {
 		$("#edit_animal_"+"<%= escape_javascript(@animal2.id.to_s) %>").submit();
-		});
+		alert("No, really");
+});
