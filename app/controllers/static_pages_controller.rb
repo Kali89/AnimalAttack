@@ -14,6 +14,7 @@ class StaticPagesController < ApplicationController
 		end
 	end
 
+
   def help
 		respond_to do |format|
 			format.html

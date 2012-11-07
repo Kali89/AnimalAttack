@@ -1,7 +1,6 @@
-$(".Question1").click(
+$("h1").click(
 	function() {
-		$("#edit_animal_"+"<%= escape_javascript(@animal.id.to_s) %>").submit();
-		alert("<%= escape_javascript(@animal.name.to_s) %>" + ": " + "<%= escape_javascript(@animal.rating.to_s) %>");
+		alert("Oh Yeah!");
 });
 
 $("#FirstAnimal").click(

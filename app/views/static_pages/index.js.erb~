@@ -1,11 +1,12 @@
 $("#FirstAnimal").click(
 	function() {
+		alert("<%= escape_javascript(@animal.name.to_s) %>" + ": " + "<%= escape_javascript(@animal.rating.to_s) %>");
 		$("#edit_animal_"+"<%= escape_javascript(@animal.id.to_s) %>").submit();
-		alert("I will kill you!");
+		alert("<%= escape_javascript(@animal.name.to_s) %>" + ": " + "<%= escape_javascript(@animal.rating.to_s) %>");
 });
 
-$("#FirstAnimal").click(
+$("#SecondAnimal").click(
 	function() {
 		$("#edit_animal_"+"<%= escape_javascript(@animal2.id.to_s) %>").submit();
-		alert("No, really");
+		alert("<%= escape_javascript(@animal2.name.to_s) %>" + ": " + "<%= escape_javascript(@animal2.rating.to_s) %>");
 });
