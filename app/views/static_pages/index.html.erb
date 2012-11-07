@@ -5,7 +5,6 @@
 	<div id="animalfacts"></div>
 	<div class="animalcontainerright">
 	<h2> <%= @animal.name %> </h2> 
-	<!--<%= link_to image_tag(@animal.attachment.url(:large)), voting_path(@animal), :remote => true, :id => "FirstAnimal"  %> -->
 	<%= form_for @animal, :remote => true do |f| %>
 	<%= f.hidden_field @animal.id, :value => @animal.rating %>
 	<%= f.hidden_field @animal2.id, :value => @animal2.rating %>
@@ -19,10 +18,7 @@
 	<%= f.hidden_field @animal.id, :value => @animal.rating %>
 	<%= image_submit_tag(@animal2.attachment.url(:large)) %>
 	<% end %>
-	<!-- <%= link_to image_tag(@animal2.attachment.url(:large)), voting_path(@animal2), :remote => true, :id => "SecondAnimal"  %> -->
 	</div>
-
-
 	<% else %>
 	<p> Not working </p>
 	<% end %>

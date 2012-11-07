@@ -7,6 +7,7 @@ $("#FirstAnimal").click(
 
 $("#SecondAnimal").click(
 	function() {
+		alert("<%= escape_javascript(@animal2.name.to_s) %>" + ": " + "<%= escape_javascript(@animal2.rating.to_s) %>");
 		$("#edit_animal_"+"<%= escape_javascript(@animal2.id.to_s) %>").submit();
 		alert("<%= escape_javascript(@animal2.name.to_s) %>" + ": " + "<%= escape_javascript(@animal2.rating.to_s) %>");
 });

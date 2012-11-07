@@ -17,7 +17,7 @@
 	<%= form_for @animal2, :remote => true do |f| %>
 	<%= f.hidden_field @animal2.id, :value => @animal2.rating %>
 	<%= f.hidden_field @animal.id, :value => @animal.rating %>
-	<%= image_submit_tag(image_tag(@animal2.attachment.url(:large))) %>
+	<%= image_submit_tag(@animal2.attachment.url(:large)) %>
 	<% end %>
 	<!-- <%= link_to image_tag(@animal2.attachment.url(:large)), voting_path(@animal2), :remote => true, :id => "SecondAnimal"  %> -->
 	</div>
