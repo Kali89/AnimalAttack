@@ -1,6 +1,4 @@
 $(document).ready(function(){
-	$('#Q1').onclick(
-		$('#A1').style.display == "block");
   $('#create_comment_form')
     .bind("ajax:beforeSend", function(evt, xhr, settings){
       var $submitButton = $(this).find('input[name="commit"]');

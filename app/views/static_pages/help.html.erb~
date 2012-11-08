@@ -4,18 +4,18 @@
 <p> Here's where you can find all the answers to your animal based ponderings. </p>
 <h3> FAQ </h3>
 <ul id="helpQuestions">
-	<li> Why isn't there animal x? </li>
-	<li> Because you haven't made it. </li>
-	<li> How come animal x beats animal y? </li>
-	<li> Because you, or other people like you, decided that was the case. </li>
-	<li> Where can I find more information about animal x? </li>
-	<li> <a href="http://www.google.com">Source of all knowledge</a></li>
-	<li> I'd like to write the blurb for animal x, can I? </li>
-	<li> Please - go for it! </li>
-	<li> I don't like the blurb for animal x - why is it like that? </li>
-	<li> Because somebody wrote it like that. See the point above. </li>
-	<li> Do you guys have copyright for all the material you've used? </li>
-	<li> Lol. We don't even have our own internet. </li>
+	<li id="Q1"> Why isn't there animal x? </li>
+	<li id="A1"> Because you haven't made it. </li>
+	<li id="Q2"> How come animal x beats animal y? </li>
+	<li id="A2"> Because you, or other people like you, decided that was the case. </li>
+	<li id="Q3"> Where can I find more information about animal x? </li>
+	<li id="A3"> <a href="http://www.google.com">Source of all knowledge</a></li>
+	<li id="Q4"> I'd like to write the blurb for animal x, can I? </li>
+	<li id="A4"> Please - go for it! </li>
+	<li id="Q5"> I don't like the blurb for animal x - why is it like that? </li>
+	<li id="A5"> Because somebody wrote it like that. See the point above. </li>
+	<li id="Q6"> Do you guys have copyright for all the material you've used? </li>
+	<li id="A6"> Lol. We don't even have our own internet. </li>
 </ul>
 
 
