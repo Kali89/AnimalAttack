@@ -42,7 +42,7 @@ class AnimalsController < ApplicationController
 		@ratingToAdd = 8*(1 - (1/(1+10^((@losingAnimal.rating - @winningAnimal.rating)/400)))).ceil
 		@ratingToTake = -8*(1/(1+10^((@winningAnimal.rating - @losingAnimal.rating)/400))).ceil
 		@winningAnimal.rating += @ratingToAdd
-		@losingAnimal.rating -= @ratingToTake
+		@losingAnimal.rating += @ratingToTake
 		respond_to do |format|
 			format.html {redirect_to root_path}
 			format.js
