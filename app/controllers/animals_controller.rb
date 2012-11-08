@@ -34,6 +34,17 @@ class AnimalsController < ApplicationController
 	end
 
 	def update
+		@animal = (params[:animal])
+		@winningAnimal = Animal.find(params[:id])
+		@losingAnimal = Animal.find(@animal.keys[1])
+		@winningBefore = @winningAnimal.rating.to_s.dup
+		@losingBefore = @losingAnimal.rating.to_s.dup
+		@winningAnimal.rating += 1
+		@losingAnimal.rating -= 1
+		respond_to do |format|
+			format.html {redirect_to root_path}
+			format.js
+		end
 	end
 
 end
