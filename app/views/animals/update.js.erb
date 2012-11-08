@@ -18,4 +18,4 @@ $(function() {
 		})
 		.html("<p>"+"<%= escape_javascript(@winningAnimal.name.to_s) %>"+"  had ranking: "+"<%= escape_javascript(@winningBefore.to_s) %>" +".</p>"+"<p>"+"<%= escape_javascript(@losingAnimal.name.to_s) %>"+"  had ranking: "+"<%= escape_javascript(@losingBefore.to_s) %>" +".</p>"+ "<p>"+"<%= escape_javascript(@winningAnimal.name.to_s) %>"+"  now has ranking: "+"<%= escape_javascript(@winningAnimal.rating.to_s) %>" +".</p>"+"<p>"+"<%= escape_javascript(@losingAnimal.name.to_s) %>"+"  now has ranking: "+"<%= escape_javascript(@losingAnimal.rating.to_s) %>" +".</p>");
 });
-setTimeout(function() {window.location.replace("/");},2500);
+setTimeout(function() {window.location.replace("/");},5000);
