@@ -39,10 +39,16 @@ class AnimalsController < ApplicationController
 		@losingAnimal = Animal.find(@animal.keys[1])
 		@winningBefore = @winningAnimal.rating.to_s.dup
 		@losingBefore = @losingAnimal.rating.to_s.dup
-		@ratingToAdd = 8*(1 - (1/(1+10^((@losingAnimal.rating - @winningAnimal.rating)/400)))).ceil
-		@ratingToTake = -8*(1/(1+10^((@winningAnimal.rating - @losingAnimal.rating)/400))).ceil
+		@winningFactor = 10^(@winningAnimal.rating/400)
+		@losingFactor = 10^(@losingAnimal.rating/400)
+		@ratingToAdd = 12*(1 - (@winningFactor/(@winningFactor+@losingFactor)))
+		@ratingToTake = (-12*@losingFactor)/(@losingFactor+@winningFactor)
 		@winningAnimal.rating += @ratingToAdd
 		@losingAnimal.rating += @ratingToTake
+		Animal.transaction do
+			@winningAnimal.save!
+			@losingAnimal.save!
+		end
 		respond_to do |format|
 			format.html {redirect_to root_path}
 			format.js
