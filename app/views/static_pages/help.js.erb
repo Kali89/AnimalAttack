@@ -3,8 +3,5 @@ $("h1").click(
 		alert("Oh Yeah!");
 });
 
-$("#FirstAnimal").click(
-	function() {
-		$("#edit_animal_"+"<%= escape_javascript(@animal2.id.to_s) %>").submit();
-		alert("<%= escape_javascript(@animal.name.to_s) %>" + ": " + "<%= escape_javascript(@animal.rating.to_s) %>");
-});
+$("#Q1").click(document.getElementById("#A1").style.display == "block");
+

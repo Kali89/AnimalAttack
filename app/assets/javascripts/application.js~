@@ -14,4 +14,9 @@
 //= require jquery_ujs
 //= require_tree .
 
-
+$("#Q1").click(document.getElementById("#A1").style.display == "block");
+$("#Q2").click(document.getElementById("#A2").style.display == "block");
+$("#Q3").click(document.getElementById("#A3").style.display == "block");
+$("#Q4").click(document.getElementById("#A4").style.display == "block");
+$("#Q5").click(document.getElementById("#A5").style.display == "block");
+$("#Q6").click(document.getElementById("#A6").style.display == "block");

@@ -3,7 +3,7 @@
 <h1>Help</h1>
 <p> Here's where you can find all the answers to your animal based ponderings. </p>
 <h3> FAQ </h3>
-<ul :remote => true>
+<ul id="helpQuestions">
 	<li> Why isn't there animal x? </li>
 	<li> Because you haven't made it. </li>
 	<li> How come animal x beats animal y? </li>

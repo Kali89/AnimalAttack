@@ -1,6 +1,6 @@
 class StaticPagesController < ApplicationController
 	respond_to :html, :js
-	before_filter :myvars, :before => :index
+	before_filter :myvars, :only => :index
 	
 	def myvars	
 		@allAnimals = Animal.all
