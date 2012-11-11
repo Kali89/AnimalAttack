@@ -11,18 +11,19 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121021204922) do
+ActiveRecord::Schema.define(:version => 20121111191719) do
 
   create_table "animals", :force => true do |t|
     t.string   "name"
     t.string   "blurb"
     t.integer  "rating"
-    t.datetime "created_at",              :null => false
-    t.datetime "updated_at",              :null => false
+    t.datetime "created_at",                             :null => false
+    t.datetime "updated_at",                             :null => false
     t.string   "attachment_file_name"
     t.string   "attachment_content_type"
     t.integer  "attachment_file_size"
     t.datetime "attachment_updated_at"
+    t.integer  "match_count",             :default => 0
   end
 
   add_index "animals", ["name"], :name => "index_animals_on_name", :unique => true

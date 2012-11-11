@@ -14,6 +14,7 @@
 #  attachment_updated_at   :datetime
 #
 class Animal < ActiveRecord::Base
+	default_scope :order => "rating DESC"
 	attr_protected :id
   #attr_accessible :blurb, :name, :rating
 	has_attached_file :attachment,

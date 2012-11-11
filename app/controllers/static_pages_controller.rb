@@ -28,37 +28,12 @@ class StaticPagesController < ApplicationController
   def contact
   end
 
-	def edit
-		@animal = Animal.find(params[:id])
-		@animal1 = Animal.find(@animal[0].id)
-		@animal2 = Animal.find(@animal[1].id)
-		@animal1.rating += 1
-		@animal2.rating -= 1
-		Animal.transaction do
-			@animal1.save!
-			@animal2.save!
-		end
-	end
-
 	def league
+		@animal = Animal.all
+		respond_to do |format|
+			format.html
+			format.js
+		end
 	end
 
-	def voting
-		@votedAnimal = Animal.find(params[:id])
-		if @votedAnimal == @animal
-			@animal.rating += 1
-			@animal2.rating -= 1
-		else
-			@animal.rating -= 1
-			@animal2.rating += 1	
-		end
-		Animal.transaction do
-			@animal.save!
-			@animal2.save!
-		end
-		respond_to do |format|
-			format.html { redirect_to root_path }
-			format.js  
-		end
-	end
 end

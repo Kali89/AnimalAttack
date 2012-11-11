@@ -178,10 +178,18 @@ p {
 #animals {
 	list-style: none;
 	margin: 0;
+	display: inline-block;
 }
 
 #NewButton {
 	float: right;
+	border: 1px solid black;
+	border-radius: 15px;
+	width: 110px;
+	height: 50px;
+	text-align: center;
+	padding-top: 20px;
+	text-decoration: none;
 }
 
 .animalbutton {
@@ -208,6 +216,16 @@ p {
 	text-decoration: none;
 }
 
+.Delete {
+	position: relative;
+	width: 100%;
+	height: 20px;
+}
+
+.Delete:hover {
+	text-decoration: underline;
+	color: black
+}
 .animalpicture {
 			float: left;
 			margin: 0;
@@ -236,6 +254,19 @@ p {
 
 #A1,#A2,#A3,#A4,#A5,#A6 {
 	display: none;
+}
+
+table, th, td  {
+	border: 1px solid black;
+}
+
+th {
+	padding: 4px;
+}
+	
+td {
+	text-align: center;
+	vertical-align: center;
 }
 
 

@@ -1,0 +1,12 @@
+class Addcountofmatch < ActiveRecord::Migration
+  def up
+  end
+	
+	def change
+		add_column :animals, :match_count, :integer
+	end
+
+
+  def down
+  end
+end

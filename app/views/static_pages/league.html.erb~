@@ -1,0 +1,53 @@
+<% provide(:title, 'League Table') %>
+<h1>League Table</h1>
+<p> Get the up to date table of how the various animals are getting on in their respective leagues. </p>
+<h3> Premier League </h3>
+<ol>
+	<li> Gorilla </li>
+	<li> Shark </li>
+	<li> Bear </li>
+	<li> Python </li>
+</ol>
+
+<h3> Division 1 </h3>
+<ol>
+	<li> Mongoose </li>
+	<li> Human </li>
+	<li> Seal </li>
+	<li> Poison Frog </li>
+</ol>
+
+<h2> Cup Round 1 </h2>
+<p> This is where various cup based shenanigans will be happening. </p>
+		<table>
+		<thead>
+			<th> Ranking </th>
+			<th> Name </th>
+			<th> Played </th>
+			<th> Games Won </th>
+			<th> Rating </th>
+		</thead>
+		<% count = 0 %>
+		<% @animal.each do |animal| %>
+			<tr>
+			<% count += 1 %>
+			<td>
+				<%= count %>
+			</td>
+			<td>
+				<%= animal.name.to_s %>
+			</td>
+			<td>
+				<%= animal.match_count.to_s %>
+			</td>
+			<td>
+				4
+			</td>
+			<td>
+				<%= animal.rating %>
+			</td>
+			</tr>
+		<% end %>
+		</table>
+
+
