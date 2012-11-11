@@ -39,7 +39,7 @@ class AnimalsController < ApplicationController
 		@losingAnimal = Animal.find(@animal.keys[1])
 		@winningBefore = @winningAnimal.rating.to_s.dup
 		@losingBefore = @losingAnimal.rating.to_s.dup
-		@ratingFactor = 32
+		@ratingFactor = 15
 		if (@winningAnimal.rating <= @losingAnimal.rating)
 			@probWinner = 1/((Math.exp(@losingAnimal.rating - @winningAnimal.rating) + 1))
 			@probLoser = 1 - @probWinner
@@ -50,7 +50,9 @@ class AnimalsController < ApplicationController
 			@probWinner = 1 - @probLoser
 			@winningAnimal.rating += @ratingFactor * (1 - @probWinner)
 			@losingAnimal.rating -= @ratingFactor * -@probLoser
-		end		
+		end
+		@winningAnimal.match_count += 1
+		@losingAnimal.match_count += 1
 		Animal.transaction do
 			@winningAnimal.save!
 			@losingAnimal.save!

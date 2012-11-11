@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121111191719) do
+ActiveRecord::Schema.define(:version => 20121111195841) do
 
   create_table "animals", :force => true do |t|
     t.string   "name"
@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(:version => 20121111191719) do
     t.integer  "attachment_file_size"
     t.datetime "attachment_updated_at"
     t.integer  "match_count",             :default => 0
+    t.integer  "matches_won",             :default => 0
   end
 
   add_index "animals", ["name"], :name => "index_animals_on_name", :unique => true

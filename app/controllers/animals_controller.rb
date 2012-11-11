@@ -50,7 +50,10 @@ class AnimalsController < ApplicationController
 			@probWinner = 1 - @probLoser
 			@winningAnimal.rating += @ratingFactor * (1 - @probWinner)
 			@losingAnimal.rating -= @ratingFactor * -@probLoser
-		end		
+		end
+		@winningAnimal.match_count += 1
+		@losingAnimal.match_count += 1
+		@winningAnimal.matches_won += 1
 		Animal.transaction do
 			@winningAnimal.save!
 			@losingAnimal.save!
