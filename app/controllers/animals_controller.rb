@@ -43,7 +43,7 @@ class AnimalsController < ApplicationController
 		@difference = @winningAnimal.rating.abs
 		@probWinner = 1/((Math.exp(@difference)+1))
 		@probLoser = 1 - @probWinner
-		@winningAnimal.rating += @ratingFactor * @probLoser
+		@winningAnimal.rating += @ratingFactor * @probWinner
 		@losingAnimal.rating += @ratingFactor * -@probLoser
 		@winningAnimal.match_count += 1
 		@losingAnimal.match_count += 1
