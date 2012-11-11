@@ -12,8 +12,7 @@
       <%= f.label :blurb %>
       <%= f.text_area :blurb %><br/>
 
-			<%= f.label :rating %>
-			<%= f.text_field :rating %><br/>
+	    <%= f.hidden_field :rating, :value => 100 %>
 
 			<%= f.label 'Image' %>
 			<%= f.file_field :attachment %>
