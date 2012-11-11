@@ -40,17 +40,11 @@ class AnimalsController < ApplicationController
 		@winningBefore = @winningAnimal.rating.to_s.dup
 		@losingBefore = @losingAnimal.rating.to_s.dup
 		@ratingFactor = 15
-		if (@winningAnimal.rating <= @losingAnimal.rating)
-			@probWinner = 1/((Math.exp(@losingAnimal.rating - @winningAnimal.rating) + 1))
-			@probLoser = 1 - @probWinner
-			@winningAnimal.rating += @ratingFactor * (1 - @probWinner)
-			@losingAnimal.rating += @ratingFactor * -@probLoser
-		else
-			@probLoser = 1/((Math.exp(@winningAnimal.rating - @losingAnimal.rating) + 1))
-			@probWinner = 1 - @probLoser
-			@winningAnimal.rating += @ratingFactor * (1 - @probWinner)
-			@losingAnimal.rating -= @ratingFactor * -@probLoser
-		end
+		@difference = @winningAnimal.rating.abs
+		@probWinner = 1/((Math.exp(@difference)+1))
+		@probLoser = 1 - @probWinner
+		@winningAnimal.rating += @ratingFactor * @probLoser
+		@losingAnimal.rating += @ratingFactor * -@probLoser
 		@winningAnimal.match_count += 1
 		@losingAnimal.match_count += 1
 		@winningAnimal.matches_won += 1
