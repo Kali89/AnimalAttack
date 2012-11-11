@@ -41,7 +41,7 @@ class AnimalsController < ApplicationController
 		@losingBefore = @losingAnimal.rating.to_s.dup
 		@ratingFactor = 15
 		@difference = @winningAnimal.rating.abs
-		@probWinner = 1/((Math.exp(@difference)+1))
+		@probWinner = 1/((Math.exp(@difference/40)+1))
 		@probLoser = 1 - @probWinner
 		@winningAnimal.rating += @ratingFactor * @probWinner
 		@losingAnimal.rating += @ratingFactor * -@probLoser
