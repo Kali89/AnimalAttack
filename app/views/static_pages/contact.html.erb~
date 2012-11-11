@@ -1,2 +1,5 @@
-<h1>StaticPages#contact</h1>
-<p>Find me in app/views/static_pages/contact.html.erb</p>
+<% provide(:title, 'Contact Us') %>
+<h1> Contact Us </h1>
+<p>
+	Feel free to get in touch. We love to chat about animals. Except horses. Never horses.
+</p>
