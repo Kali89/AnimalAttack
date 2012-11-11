@@ -1,26 +1,33 @@
-<div class="center hero-unit">
+<div class="index">
 	<h1>Animal Attack</h1>
 	<p> Who will win when nature collides? </p>
 	<% if @animal %>
-	<div id="animalfacts"></div>
-	<div class="animalcontainerright">
-	<h2> <%= @animal.name %> </h2> 
+	<table>
+	<thead>
+	<td>
+	<h2> <%= @animal.name %> </h2>
+	</td>
+	<td>
+	<h2> <%= @animal2.name %> </h2>
+	</td>
+	</thead>
+	<tr>
+	<td>
 	<%= form_for @animal, :remote => true do |f| %>
 	<%= f.hidden_field @animal.id, :value => @animal.rating %>
 	<%= f.hidden_field @animal2.id, :value => @animal2.rating %>
 	<%= image_submit_tag(@animal.attachment.url(:large)) %>
 	<% end %>
-	</div>
-	<div class="animalcontainerleft">
-	<h2> <%= @animal2.name %> </h2>
+	</td>
+	<td>
 	<%= form_for @animal2, :remote => true do |f| %>
 	<%= f.hidden_field @animal2.id, :value => @animal2.rating %>
 	<%= f.hidden_field @animal.id, :value => @animal.rating %>
 	<%= image_submit_tag(@animal2.attachment.url(:large)) %>
 	<% end %>
-	</div>
-	<% else %>
-	<p> Not working </p>
+	</td>
+	</tr>
+	</table>
 	<% end %>
 </div>
 

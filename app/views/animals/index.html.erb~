@@ -11,7 +11,7 @@
 				</div>
 				<div class="animallink">
 		    <%= link_to animal.name, animal %>
-				<%= link_to "Delete", animal_path(animal), :remote => true, :method => :delete, :confirm => 'Are you sure?' %>
+				<%= link_to "Delete", animal_path(animal), :remote => true, :method => :delete, :prompt => 'Enter your password', :class => "Delete" %>
 				</div>
 		  </li>
 			</div>

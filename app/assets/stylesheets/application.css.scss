@@ -269,4 +269,24 @@ td {
 	vertical-align: center;
 }
 
+.index table, th, td {
+	border: none;
+}
+
+.index  {
+	text-align: center;
+}
+.index table {
+	width: 100%;
+	margin: auto;
+}
+.index th {
+	padding: 2px;
+}
+
+.index td {
+	text-align: center;
+	vertical-align: center;
+}
+
 
