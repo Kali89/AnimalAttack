@@ -24,18 +24,10 @@ class Animal < ActiveRecord::Base
 			:large =>  "x600" },
 		:path => ":attachment/:id/:style.:extension",
 		:bucket => 'animalattack2'
-	def file_dimensions
-		dimensions = Paperclip::Geometry.from_file(file.queued_for_write[:attachment].path)
-		self.width = dimensions.width
-		self.height = dimensions.height
-		if dimensions.width < 100 && dimensions.height < 100
-			errors.add(:file, 'Image width or height must be at least 100px')
-		end
-	end
 	before_save { |animal| animal.name = name.downcase }
 	validates :name, presence: true, uniqueness: { case_sensitive: false }
 	validates :rating, presence: true
 	validates_attachment :attachment, presence: true
-	validate :file_dimensions
+	validates_attachment_content_type :attachment, :content_type =>['image/jpeg', 'image/png', 'image/gif']
 	validates_attachment_size :attachment, :less_than => 25.megabytes
 end
