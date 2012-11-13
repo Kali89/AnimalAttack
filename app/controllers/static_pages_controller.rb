@@ -29,7 +29,7 @@ class StaticPagesController < ApplicationController
   end
 
 	def league
-		@animal = Animal.all
+		@animal = Animal.all(:limit => 4)
 		respond_to do |format|
 			format.html
 			format.js

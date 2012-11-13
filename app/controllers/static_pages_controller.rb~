@@ -1,6 +1,6 @@
 class StaticPagesController < ApplicationController
 	respond_to :html, :js
-	before_filter :myvars, :only => :index, :only => :league
+	before_filter :myvars, :only => :index
 	
 	def myvars	
 		@allAnimals = Animal.all
@@ -29,6 +29,7 @@ class StaticPagesController < ApplicationController
   end
 
 	def league
+		@animala = Animal.all(:limit => 4)
 		respond_to do |format|
 			format.html
 			format.js

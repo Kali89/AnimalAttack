@@ -16,17 +16,26 @@
 class Animal < ActiveRecord::Base
 	default_scope :order => "rating DESC"
 	attr_protected :id
-  #attr_accessible :blurb, :name, :rating
 	has_attached_file :attachment,
-		#:default_url => ActionController::Base.helpers.asset_path('default_:style.png'),
 		:styles => {
-			:thumb => "100x100#",
+			:thumb => "100x100!",
 			:small => "150x150>",
 			:medium => "300x300>",
-			:large =>  "600x600>" },
+			:large =>  "x600" },
 		:path => ":attachment/:id/:style.:extension",
 		:bucket => 'animalattack2'
+	def file_dimensions
+		dimensions = Paperclip::Geometry.from_file(file.queued_for_write[:attachment].path)
+		self.width = dimensions.width
+		self.height = dimensions.height
+		if dimensions.width < 100 && dimensions.height < 100
+			errors.add(:file, 'Image width or height must be at least 100px')
+		end
+	end
 	before_save { |animal| animal.name = name.downcase }
 	validates :name, presence: true, uniqueness: { case_sensitive: false }
 	validates :rating, presence: true
+	validates_attachment :attachment, presence: true
+	validate :file_dimensions
+	validates_attachment_size :attachment, :less_than => 25.megabytes
 end

@@ -11,6 +11,7 @@
 			<th> Rating </th>
 		</thead>
 		<% count = 0 %>
+		<% while count < 5 %>
 		<% @animal.each do |animal| %>
 			<tr>
 			<% count += 1 %>
@@ -31,6 +32,10 @@
 			</td>
 			</tr>
 		<% end %>
+		<% end %>
 		</table>
+
+
+		
 
 
