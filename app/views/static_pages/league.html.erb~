@@ -12,61 +12,30 @@
 		</thead>
 		<% count = 0 %>
 		<% while count < 5 %>
-		<% @animala.each do |animal| %>
+		<% @animal.each do |animal| %>
 			<tr>
 			<% count += 1 %>
 			<td>
 				<%= count %>
 			</td>
 			<td>
-				<%= animala.name.to_s %>
+				<%= animal.name.to_s %>
 			</td>
 			<td>
-				<%= animala.match_count.to_s %>
+				<%= animal.match_count.to_s %>
 			</td>
 			<td>
-				<%= animala.matches_won.to_s %>
+				<%= animal.matches_won.to_s %>
 			</td>
 			<td>
-				<%= animala.rating %>
+				<%= animal.rating %>
 			</td>
 			</tr>
 		<% end %>
 		<% end %>
 		</table>
-		<h3> First Division </h3>
-		<table>
-		<thead>
-			<th> Ranking </th>
-			<th> Name </th>
-			<th> Played </th>
-			<th> Games Won </th>
-			<th> Rating </th>
-		</thead>
-		<% count = 0 %>
-		<% while count < 5 %>
-		<% @animala.each do |animal| %>
-			<tr>
-			<% count += 1 %>
-			<td>
-				<%= count %>
-			</td>
-			<td>
-				<%= animala.name.to_s %>
-			</td>
-			<td>
-				<%= animala.match_count.to_s %>
-			</td>
-			<td>
-				<%= animala.matches_won.to_s %>
-			</td>
-			<td>
-				<%= animala.rating %>
-			</td>
-			</tr>
-		<% end %>
-		<% end %>
-		</table>
+
+
 		
 
 
