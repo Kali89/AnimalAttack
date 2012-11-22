@@ -11,6 +11,12 @@
  *= require_self
  *= require_tree .
  */
+
+$maingreen: #12b812;
+$lightgreen: #a8eda8;
+$darkgreen: #025702;
+$lightergreen: #68ed68;
+
 html {
 	width: 100%	;
 	overflow-y: scroll; 	
@@ -19,7 +25,7 @@ html {
 body {
 	margin: 0;
 	font-family: 'ABeeZee', sans-serif;
-	background-color: #FFC700;
+	background-color: $lightergreen;
 	}
 	
 nav li {
@@ -28,17 +34,17 @@ nav li {
 	display: inline-block;
 	text-decoration: none;
 	width: 7%;
-	border: 2px solid #FFC700;
+	border: 2px solid black;
 	border-radius: 15px;
 }
 
 nav li a {
 	text-decoration: none;
-	color: #FFC700;
+	color: $lightergreen;
 	}
 
 nav li a:hover {
-	color: black;	
+	color: $lightgreen;	
 	}
 
 .nav .pull-left {
@@ -60,7 +66,7 @@ nav li a:hover {
 	background-color: #2818B1;
 	width: 100%	;
 	height: auto;
-	border-bottom: 2px solid #FFC700;
+	border-bottom: 2px solid $maingreen;
 	}
 	
 /*@import "bootstrap"; */
@@ -95,7 +101,7 @@ textarea {
 
 h1, h2, h3, h4, h5, h6 {
 	line-height: 1;
-	color: black;
+	color: $maingreen;
 }
 
 h1 {
@@ -122,7 +128,7 @@ p {
 
 #logo {
 	float: right;
-	color: #FFC700;
+	color: $lightergreen;
 	margin-right: 10px;
 	font-size: 1.7em;
 	font-weight: bold;
@@ -140,6 +146,7 @@ p {
 /* footer */
 
 .footer {
+	background-color: #2818B1;
 	margin-top: 45px;
 	padding-top: 5px;
 	border-top: 1px solid black;
@@ -273,7 +280,7 @@ td {
 	border: none;
 }
 
-.index h1 {
+.index  {
 	text-align: center;
 }
 .index table {
